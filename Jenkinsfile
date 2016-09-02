@@ -1,15 +1,3 @@
 node {
-  def appName = 'gceme'
-  def feSvcName = "${appName}-frontend"
-  def imageTag = "cloudyuga/sample-app"
-
-  checkout scm
-
-  stage 'Build image'
-  sh("docker build -t ${imageTag} .")
-
-  stage 'Run Go tests'
-  sh("docker run ${imageTag} go test")
-
-
+ sh("kubectl create -f https://raw.githubusercontent.com/kubernetes/kubernetes.github.io/release-1.3/docs/user-guide/nginx-deployment.yaml")
 }
