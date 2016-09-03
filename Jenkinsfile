@@ -17,7 +17,7 @@ node('dockerhost') {
   switch (env.BRANCH_NAME) {
     // Roll out to staging
     case "staging":
-        sh("docker run -d --name=staging_gcme ${imageTag}")
+        sh("docker run -d --name=production_gcme -p 8081:80 ${imageTag}")
         break
 
     // Roll out to production
