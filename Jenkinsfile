@@ -22,7 +22,7 @@ node('dockerhost') {
 
     // Roll out to production
     case "master":
-        sh("docker run -d --name=production_gcme imageTag")
+        sh("docker run -d --name=production_gcme -p 8080:80 imageTag")
         break
 
     // Roll out a dev environment
