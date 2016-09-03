@@ -22,6 +22,7 @@ node('dockerhost') {
 
     // Roll out to production
     case "master":
+        input 'are you sure ?'
         sh("docker run -d --name=production_gcme -p 8080:80 ${imageTag}")
         break
 
