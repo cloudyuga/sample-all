@@ -1,4 +1,4 @@
 node {
  stage 'Build image'
- sh("docker run -it busybox echo 'hello'")
+ sh("docker run busybox echo 'hello'")
 }
